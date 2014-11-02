@@ -243,3 +243,640 @@ Processing by TodoListsController#index as HTML
   [1m[36mTodoList Load (0.2ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists"[0m
   Rendered todo_lists/index.html.erb within layouts/application (2.2ms)
 Completed 200 OK in 48ms (Views: 47.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-02 17:41:37 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TodoListsController#index as HTML
+  [1m[35mTodoList Load (0.5ms)[0m  SELECT "todo_lists".* FROM "todo_lists"
+  Rendered todo_lists/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 158ms (Views: 135.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-02 17:41:38 +0000
+
+
+Started GET "/assets/todo_items.css?body=1" for 127.0.0.1 at 2014-11-02 17:41:38 +0000
+
+
+Started GET "/assets/todo_lists.css?body=1" for 127.0.0.1 at 2014-11-02 17:41:38 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-02 17:41:38 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-02 17:41:38 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-02 17:41:38 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-02 17:41:38 +0000
+
+
+Started GET "/assets/todo_items.js?body=1" for 127.0.0.1 at 2014-11-02 17:41:38 +0000
+
+
+Started GET "/assets/todo_lists.js?body=1" for 127.0.0.1 at 2014-11-02 17:41:38 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-02 17:41:38 +0000
+
+
+Started GET "/todo_lists/1" for 127.0.0.1 at 2014-11-02 17:41:46 +0000
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoList Load (0.2ms)[0m  [1mSELECT  "todo_lists".* FROM "todo_lists"  WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTodoItem Load (0.6ms)[0m  SELECT "todo_items".* FROM "todo_items"  WHERE "todo_items"."todo_list_id" = ?  [["todo_list_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered todo_items/_form.html.erb (21.1ms)
+  Rendered todo_lists/show.html.erb within layouts/application (40.7ms)
+Completed 200 OK in 116ms (Views: 112.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/todo_lists/1/edit" for 127.0.0.1 at 2014-11-02 17:41:50 +0000
+Processing by TodoListsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT  "todo_lists".* FROM "todo_lists"  WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered todo_lists/_form.html.erb (5.1ms)
+  Rendered todo_lists/edit.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 48ms (Views: 46.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/todo_lists" for 127.0.0.1 at 2014-11-02 17:41:54 +0000
+Processing by TodoListsController#index as HTML
+  [1m[35mTodoList Load (0.2ms)[0m  SELECT "todo_lists".* FROM "todo_lists"
+  Rendered todo_lists/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 42ms (Views: 41.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/todo_lists/new" for 127.0.0.1 at 2014-11-02 17:49:49 +0000
+Processing by TodoListsController#new as HTML
+  Rendered todo_lists/_form.html.erb (1.7ms)
+  Rendered todo_lists/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 45ms (Views: 44.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/todo_lists/1" for 127.0.0.1 at 2014-11-02 17:49:52 +0000
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT  "todo_lists".* FROM "todo_lists"  WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTodoItem Load (0.1ms)[0m  SELECT "todo_items".* FROM "todo_items"  WHERE "todo_items"."todo_list_id" = ?  [["todo_list_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered todo_items/_form.html.erb (1.6ms)
+  Rendered todo_lists/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 93ms (Views: 91.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/todo_lists/1/todo_items" for 127.0.0.1 at 2014-11-02 17:49:54 +0000
+Processing by TodoItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ytgpMEVYuSkIeqZV/zOYUZTm2rA5MiKAF8AOfcMm1Uo=", "todo_item"=>{"content"=>"wow"}, "commit"=>"Create Todo item", "todo_list_id"=>"1"}
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT  "todo_lists".* FROM "todo_lists"  WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "todo_items" ("content", "created_at", "todo_list_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "wow"], ["created_at", "2014-11-02 17:49:54.555894"], ["todo_list_id", 1], ["updated_at", "2014-11-02 17:49:54.555894"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Redirected to http://localhost:3001/todo_lists/1
+Completed 302 Found in 7ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/todo_lists/1" for 127.0.0.1 at 2014-11-02 17:49:54 +0000
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoList Load (0.2ms)[0m  [1mSELECT  "todo_lists".* FROM "todo_lists"  WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTodoItem Load (0.1ms)[0m  SELECT "todo_items".* FROM "todo_items"  WHERE "todo_items"."todo_list_id" = ?  [["todo_list_id", 1]]
+  Rendered todo_items/_todo_item.html.erb (0.4ms)
+  Rendered todo_items/_form.html.erb (2.5ms)
+  Rendered todo_lists/show.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 48ms (Views: 46.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/todo_items.css?body=1" for 127.0.0.1 at 2014-11-02 17:49:54 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-02 17:49:54 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-02 17:49:54 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-02 17:49:54 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-02 17:49:54 +0000
+
+
+Started GET "/assets/todo_lists.css?body=1" for 127.0.0.1 at 2014-11-02 17:49:54 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-02 17:49:54 +0000
+
+
+Started GET "/assets/todo_items.js?body=1" for 127.0.0.1 at 2014-11-02 17:49:54 +0000
+
+
+Started GET "/assets/todo_lists.js?body=1" for 127.0.0.1 at 2014-11-02 17:49:54 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-02 17:49:54 +0000
+
+
+Started GET "/todo_lists/1" for 127.0.0.1 at 2014-11-02 17:52:15 +0000
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT  "todo_lists".* FROM "todo_lists"  WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTodoItem Load (0.1ms)[0m  SELECT "todo_items".* FROM "todo_items"  WHERE "todo_items"."todo_list_id" = ?  [["todo_list_id", 1]]
+  Rendered todo_items/_todo_item.html.erb (0.6ms)
+  Rendered todo_lists/show.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 5ms
+
+SyntaxError (/Users/tajdid/Documents/GitHub/todolist/app/views/todo_items/_todo_item.html.erb:3: syntax error, unexpected tIDENTIFIER, expecting ')'
+...elete" todo_list_todo_item_path(@todo_list, todo_item.id), m...
+...                               ^
+/Users/tajdid/Documents/GitHub/todolist/app/views/todo_items/_todo_item.html.erb:3: syntax error, unexpected ',', expecting ')'
+...path(@todo_list, todo_item.id), method: :delete, data: { con...
+...                               ^):
+  app/views/todo_items/_todo_item.html.erb:3: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/todo_items/_todo_item.html.erb:3: syntax error, unexpected ',', expecting ')'
+  app/views/todo_lists/show.html.erb:14:in `_app_views_todo_lists_show_html_erb__4197733513504415403_70356048959380'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.0ms)
+
+
+Started GET "/todo_lists/1" for 127.0.0.1 at 2014-11-02 17:54:27 +0000
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT  "todo_lists".* FROM "todo_lists"  WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTodoItem Load (0.1ms)[0m  SELECT "todo_items".* FROM "todo_items"  WHERE "todo_items"."todo_list_id" = ?  [["todo_list_id", 1]]
+  Rendered todo_items/_todo_item.html.erb (0.6ms)
+  Rendered todo_lists/show.html.erb within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 5ms
+
+SyntaxError (/Users/tajdid/Documents/GitHub/todolist/app/views/todo_items/_todo_item.html.erb:3: syntax error, unexpected tIDENTIFIER, expecting ')'
+...elete" todo_list_todo_item_path(@todo_list, todo_item.id), m...
+...                               ^
+/Users/tajdid/Documents/GitHub/todolist/app/views/todo_items/_todo_item.html.erb:3: syntax error, unexpected ',', expecting ')'
+...path(@todo_list, todo_item.id), method: :delete, data: { con...
+...                               ^):
+  app/views/todo_items/_todo_item.html.erb:3: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/todo_items/_todo_item.html.erb:3: syntax error, unexpected ',', expecting ')'
+  app/views/todo_lists/show.html.erb:14:in `_app_views_todo_lists_show_html_erb__4197733513504415403_70356048959380'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (41.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (52.5ms)
+
+
+Started GET "/todo_lists/" for 127.0.0.1 at 2014-11-02 17:54:30 +0000
+Processing by TodoListsController#index as HTML
+  [1m[36mTodoList Load (0.3ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists"[0m
+  Rendered todo_lists/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 49ms (Views: 47.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/todo_lists/1" for 127.0.0.1 at 2014-11-02 17:54:32 +0000
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT  "todo_lists".* FROM "todo_lists"  WHERE "todo_lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTodoItem Load (0.1ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"  WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 1]]
+  Rendered todo_items/_todo_item.html.erb (0.5ms)
+  Rendered todo_lists/show.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 5ms
+
+SyntaxError (/Users/tajdid/Documents/GitHub/todolist/app/views/todo_items/_todo_item.html.erb:3: syntax error, unexpected tIDENTIFIER, expecting ')'
+...elete" todo_list_todo_item_path(@todo_list, todo_item.id), m...
+...                               ^
+/Users/tajdid/Documents/GitHub/todolist/app/views/todo_items/_todo_item.html.erb:3: syntax error, unexpected ',', expecting ')'
+...path(@todo_list, todo_item.id), method: :delete, data: { con...
+...                               ^):
+  app/views/todo_items/_todo_item.html.erb:3: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/todo_items/_todo_item.html.erb:3: syntax error, unexpected ',', expecting ')'
+  app/views/todo_lists/show.html.erb:14:in `_app_views_todo_lists_show_html_erb__4197733513504415403_70356041400800'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.2ms)
+
+
+Started GET "/todo_lists/1" for 127.0.0.1 at 2014-11-02 17:54:32 +0000
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT  "todo_lists".* FROM "todo_lists"  WHERE "todo_lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTodoItem Load (0.1ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"  WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 1]]
+  Rendered todo_items/_todo_item.html.erb (0.5ms)
+  Rendered todo_lists/show.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 6ms
+
+SyntaxError (/Users/tajdid/Documents/GitHub/todolist/app/views/todo_items/_todo_item.html.erb:3: syntax error, unexpected tIDENTIFIER, expecting ')'
+...elete" todo_list_todo_item_path(@todo_list, todo_item.id), m...
+...                               ^
+/Users/tajdid/Documents/GitHub/todolist/app/views/todo_items/_todo_item.html.erb:3: syntax error, unexpected ',', expecting ')'
+...path(@todo_list, todo_item.id), method: :delete, data: { con...
+...                               ^):
+  app/views/todo_items/_todo_item.html.erb:3: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/todo_items/_todo_item.html.erb:3: syntax error, unexpected ',', expecting ')'
+  app/views/todo_lists/show.html.erb:14:in `_app_views_todo_lists_show_html_erb__4197733513504415403_70356048959380'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.7ms)
+
+
+Started GET "/todo_lists/1" for 127.0.0.1 at 2014-11-02 17:58:19 +0000
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT  "todo_lists".* FROM "todo_lists"  WHERE "todo_lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTodoItem Load (0.1ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"  WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 1]]
+  Rendered todo_items/_todo_item.html.erb (0.6ms)
+  Rendered todo_lists/show.html.erb within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 5ms
+
+SyntaxError (/Users/tajdid/Documents/GitHub/todolist/app/views/todo_items/_todo_item.html.erb:3: syntax error, unexpected tIDENTIFIER, expecting ')'
+...elete" todo_list_todo_item_path(@todo_list, todo_item.id), m...
+...                               ^
+/Users/tajdid/Documents/GitHub/todolist/app/views/todo_items/_todo_item.html.erb:3: syntax error, unexpected ',', expecting ')'
+...path(@todo_list, todo_item.id), method: :delete, data: { con...
+...                               ^):
+  app/views/todo_items/_todo_item.html.erb:3: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/todo_items/_todo_item.html.erb:3: syntax error, unexpected ',', expecting ')'
+  app/views/todo_lists/show.html.erb:14:in `_app_views_todo_lists_show_html_erb__4197733513504415403_70356048959380'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.1ms)
+
+
+Started GET "/todo_lists/1" for 127.0.0.1 at 2014-11-02 17:58:20 +0000
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT  "todo_lists".* FROM "todo_lists"  WHERE "todo_lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTodoItem Load (0.2ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"  WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 1]]
+  Rendered todo_items/_todo_item.html.erb (0.5ms)
+  Rendered todo_lists/show.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 7ms
+
+SyntaxError (/Users/tajdid/Documents/GitHub/todolist/app/views/todo_items/_todo_item.html.erb:3: syntax error, unexpected tIDENTIFIER, expecting ')'
+...elete" todo_list_todo_item_path(@todo_list, todo_item.id), m...
+...                               ^
+/Users/tajdid/Documents/GitHub/todolist/app/views/todo_items/_todo_item.html.erb:3: syntax error, unexpected ',', expecting ')'
+...path(@todo_list, todo_item.id), method: :delete, data: { con...
+...                               ^):
+  app/views/todo_items/_todo_item.html.erb:3: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/todo_items/_todo_item.html.erb:3: syntax error, unexpected ',', expecting ')'
+  app/views/todo_lists/show.html.erb:14:in `_app_views_todo_lists_show_html_erb__4197733513504415403_70356048959380'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.3ms)
+
+
+Started GET "/todo_lists/1" for 127.0.0.1 at 2014-11-02 17:59:40 +0000
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT  "todo_lists".* FROM "todo_lists"  WHERE "todo_lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTodoItem Load (0.1ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"  WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 1]]
+  Rendered todo_items/_todo_item.html.erb (0.5ms)
+  Rendered todo_items/_form.html.erb (2.9ms)
+  Rendered todo_lists/show.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 90ms (Views: 88.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/todo_items.css?body=1" for 127.0.0.1 at 2014-11-02 17:59:40 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-02 17:59:40 +0000
+
+
+Started GET "/assets/todo_lists.css?body=1" for 127.0.0.1 at 2014-11-02 17:59:40 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-02 17:59:40 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-02 17:59:40 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-02 17:59:40 +0000
+
+
+Started GET "/assets/todo_lists.js?body=1" for 127.0.0.1 at 2014-11-02 17:59:40 +0000
+
+
+Started GET "/assets/todo_items.js?body=1" for 127.0.0.1 at 2014-11-02 17:59:40 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-02 17:59:40 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-02 17:59:40 +0000
+
+
+Started GET "/todo_lists/1" for 127.0.0.1 at 2014-11-02 17:59:50 +0000
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT  "todo_lists".* FROM "todo_lists"  WHERE "todo_lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTodoItem Load (0.1ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"  WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 1]]
+  Rendered todo_items/_todo_item.html.erb (0.6ms)
+  Rendered todo_lists/show.html.erb within layouts/application (2.6ms)
+Completed 500 Internal Server Error in 6ms
+
+SyntaxError (/Users/tajdid/Documents/GitHub/todolist/app/views/todo_items/_todo_item.html.erb:3: syntax error, unexpected tIDENTIFIER, expecting ')'
+...elete" todo_list_todo_item_path(@todo_list, todo_item.id), m...
+...                               ^
+/Users/tajdid/Documents/GitHub/todolist/app/views/todo_items/_todo_item.html.erb:3: syntax error, unexpected ',', expecting ')'
+...path(@todo_list, todo_item.id), method: :delete, data: { con...
+...                               ^):
+  app/views/todo_items/_todo_item.html.erb:3: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/todo_items/_todo_item.html.erb:3: syntax error, unexpected ',', expecting ')'
+  app/views/todo_lists/show.html.erb:14:in `_app_views_todo_lists_show_html_erb__4197733513504415403_70356048959380'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.6ms)
+
+
+Started GET "/todo_lists/1" for 127.0.0.1 at 2014-11-02 18:00:35 +0000
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT  "todo_lists".* FROM "todo_lists"  WHERE "todo_lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTodoItem Load (0.1ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"  WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 1]]
+  Rendered todo_items/_todo_item.html.erb (0.5ms)
+  Rendered todo_lists/show.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 5ms
+
+SyntaxError (/Users/tajdid/Documents/GitHub/todolist/app/views/todo_items/_todo_item.html.erb:3: syntax error, unexpected tIDENTIFIER, expecting ')'
+...elete" todo_list_todo_item_path(@todo_list), method: :delete...
+...                               ^
+/Users/tajdid/Documents/GitHub/todolist/app/views/todo_items/_todo_item.html.erb:3: syntax error, unexpected ',', expecting ')'
+...ist_todo_item_path(@todo_list), method: :delete, data: { con...
+...                               ^):
+  app/views/todo_items/_todo_item.html.erb:3: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/todo_items/_todo_item.html.erb:3: syntax error, unexpected ',', expecting ')'
+  app/views/todo_lists/show.html.erb:14:in `_app_views_todo_lists_show_html_erb__4197733513504415403_70356048959380'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.6ms)
+
+
+Started GET "/todo_lists/1" for 127.0.0.1 at 2014-11-02 18:00:47 +0000
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT  "todo_lists".* FROM "todo_lists"  WHERE "todo_lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTodoItem Load (0.1ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"  WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 1]]
+  Rendered todo_items/_todo_item.html.erb (0.6ms)
+  Rendered todo_lists/show.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 6ms
+
+SyntaxError (/Users/tajdid/Documents/GitHub/todolist/app/views/todo_items/_todo_item.html.erb:3: syntax error, unexpected tIDENTIFIER, expecting ')'
+...elete" todo_list_todo_item_path(@todo_list, todo_item.id), m...
+...                               ^
+/Users/tajdid/Documents/GitHub/todolist/app/views/todo_items/_todo_item.html.erb:3: syntax error, unexpected ',', expecting ')'
+...path(@todo_list, todo_item.id), method: :delete, data: { con...
+...                               ^):
+  app/views/todo_items/_todo_item.html.erb:3: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/todo_items/_todo_item.html.erb:3: syntax error, unexpected ',', expecting ')'
+  app/views/todo_lists/show.html.erb:14:in `_app_views_todo_lists_show_html_erb__4197733513504415403_70356048959380'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.5ms)
+
+
+Started GET "/todo_lists/1" for 127.0.0.1 at 2014-11-02 18:02:04 +0000
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTodoList Load (0.2ms)[0m  SELECT  "todo_lists".* FROM "todo_lists"  WHERE "todo_lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTodoItem Load (0.1ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"  WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 1]]
+  Rendered todo_items/_todo_item.html.erb (0.6ms)
+  Rendered todo_lists/show.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 6ms
+
+SyntaxError (/Users/tajdid/Documents/GitHub/todolist/app/views/todo_items/_todo_item.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting ')'
+...elete" todo_list_todo_item_path(@todo_list, todo_item.id), m...
+...                               ^
+/Users/tajdid/Documents/GitHub/todolist/app/views/todo_items/_todo_item.html.erb:2: syntax error, unexpected ',', expecting ')'
+...path(@todo_list, todo_item.id), method: :delete, data: { con...
+...                               ^):
+  app/views/todo_items/_todo_item.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/todo_items/_todo_item.html.erb:2: syntax error, unexpected ',', expecting ')'
+  app/views/todo_lists/show.html.erb:14:in `_app_views_todo_lists_show_html_erb__4197733513504415403_70356048959380'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.9ms)
+
+
+Started GET "/todo_lists/1" for 127.0.0.1 at 2014-11-02 18:04:25 +0000
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT  "todo_lists".* FROM "todo_lists"  WHERE "todo_lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTodoItem Load (0.2ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"  WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 1]]
+  Rendered todo_items/_todo_item.html.erb (1.3ms)
+  Rendered todo_items/_form.html.erb (2.4ms)
+  Rendered todo_lists/show.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 94ms (Views: 91.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-02 18:04:25 +0000
+
+
+Started GET "/assets/todo_lists.css?body=1" for 127.0.0.1 at 2014-11-02 18:04:25 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-02 18:04:25 +0000
+
+
+Started GET "/assets/todo_items.css?body=1" for 127.0.0.1 at 2014-11-02 18:04:25 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-02 18:04:25 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-02 18:04:25 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-02 18:04:25 +0000
+
+
+Started GET "/assets/todo_items.js?body=1" for 127.0.0.1 at 2014-11-02 18:04:25 +0000
+
+
+Started GET "/assets/todo_lists.js?body=1" for 127.0.0.1 at 2014-11-02 18:04:25 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-02 18:04:25 +0000
+
+
+Started DELETE "/todo_lists/1/todo_items/1" for 127.0.0.1 at 2014-11-02 18:04:30 +0000
+
+AbstractController::ActionNotFound (The action 'destroy' could not be found for TodoItemsController):
+  actionpack (4.1.6) lib/abstract_controller/base.rb:131:in `process'
+  actionview (4.1.6) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.6) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.6) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.6) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:82:in `call'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:35:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.6) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.4ms)
+
+
+Started GET "/todo_lists/1" for 127.0.0.1 at 2014-11-02 18:06:54 +0000
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT  "todo_lists".* FROM "todo_lists"  WHERE "todo_lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTodoItem Load (0.1ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"  WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 1]]
+  Rendered todo_items/_todo_item.html.erb (0.4ms)
+  Rendered todo_items/_form.html.erb (2.1ms)
+  Rendered todo_lists/show.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 57ms (Views: 49.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-02 18:06:54 +0000
+
+
+Started GET "/assets/todo_lists.css?body=1" for 127.0.0.1 at 2014-11-02 18:06:54 +0000
+
+
+Started GET "/assets/todo_items.css?body=1" for 127.0.0.1 at 2014-11-02 18:06:54 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-02 18:06:54 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-02 18:06:54 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-02 18:06:54 +0000
+
+
+Started GET "/assets/todo_lists.js?body=1" for 127.0.0.1 at 2014-11-02 18:06:54 +0000
+
+
+Started GET "/assets/todo_items.js?body=1" for 127.0.0.1 at 2014-11-02 18:06:54 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-02 18:06:54 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-02 18:06:54 +0000
+
+
+Started DELETE "/todo_lists/1/todo_items/1" for 127.0.0.1 at 2014-11-02 18:06:57 +0000
+Processing by TodoItemsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ytgpMEVYuSkIeqZV/zOYUZTm2rA5MiKAF8AOfcMm1Uo=", "todo_list_id"=>"1", "id"=>"1"}
+  [1m[35mTodoList Load (0.2ms)[0m  SELECT  "todo_lists".* FROM "todo_lists"  WHERE "todo_lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTodoItem Load (0.3ms)[0m  [1mSELECT  "todo_items".* FROM "todo_items"  WHERE "todo_items"."todo_list_id" = ? AND "todo_items"."id" = ? LIMIT 1[0m  [["todo_list_id", 1], ["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "todo_items" WHERE "todo_items"."id" = ?[0m  [["id", 1]]
+  [1m[35m (2.2ms)[0m  commit transaction
+Redirected to http://localhost:3001/todo_lists/1
+Completed 302 Found in 9ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/todo_lists/1" for 127.0.0.1 at 2014-11-02 18:06:57 +0000
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT  "todo_lists".* FROM "todo_lists"  WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTodoItem Load (0.1ms)[0m  SELECT "todo_items".* FROM "todo_items"  WHERE "todo_items"."todo_list_id" = ?  [["todo_list_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered todo_items/_form.html.erb (1.6ms)
+  Rendered todo_lists/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 43ms (Views: 42.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/todo_items.css?body=1" for 127.0.0.1 at 2014-11-02 18:06:57 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-02 18:06:57 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-02 18:06:57 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-02 18:06:57 +0000
+
+
+Started GET "/assets/todo_lists.css?body=1" for 127.0.0.1 at 2014-11-02 18:06:57 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-02 18:06:57 +0000
+
+
+Started GET "/assets/todo_items.js?body=1" for 127.0.0.1 at 2014-11-02 18:06:57 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-02 18:06:57 +0000
+
+
+Started GET "/assets/todo_lists.js?body=1" for 127.0.0.1 at 2014-11-02 18:06:57 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-02 18:06:57 +0000
